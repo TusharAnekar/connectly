@@ -3,8 +3,7 @@ export const data = [
     userId: "user1",
     name: "Sam",
     unreadCount: 1,
-    profilePictureURL:
-      "https://www.pexels.com/photo/portrait-photo-of-smiling-man-with-his-arms-crossed-standing-in-front-of-a-wall-2379004/",
+    profilePictureURL: "https://picsum.photos/200",
     chat: [
       {
         user1: {
@@ -53,8 +52,7 @@ export const data = [
     userId: "user2",
     name: "Elon",
     unreadCount: 0,
-    profilePictureURL:
-      "https://www.pexels.com/photo/man-in-brown-polo-shirt-614810/",
+    profilePictureURL: "https://picsum.photos/200",
     chat: [
       {
         user2: {
@@ -92,8 +90,7 @@ export const data = [
     userId: "user3",
     name: "Kate",
     unreadCount: 1,
-    profilePictureURL:
-      "https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/",
+    profilePictureURL: "https://picsum.photos/200",
     chat: [
       {
         user2: {
