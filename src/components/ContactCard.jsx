@@ -50,7 +50,7 @@ export const ContactCard = ({ chat }) => {
             />
             <div>
               <p className="text-base font-bold">{name}</p>
-              <p className="w-1/3 truncate text-gray-400">
+              <p className="text-gray-400">
                 {chat.chat[chat.chat.length - 1].you.message}
               </p>
             </div>
