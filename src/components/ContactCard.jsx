@@ -23,6 +23,7 @@ export const ContactCard = ({ chat }) => {
 
   function handleDelete() {
     setChats({ type: "DELETE_CONVERSATION", payload: userId });
+    navigate("/");
   }
 
   function handleMarkAsRead() {
