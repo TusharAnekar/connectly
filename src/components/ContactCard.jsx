@@ -5,6 +5,7 @@ import { useChatContext } from "../contexts/chat-context";
 
 export const ContactCard = ({ chat }) => {
   const { userId, name, unreadCount, profilePictureURL } = chat;
+  console.log(chat.chat[chat.chat.length - 1].you.message);
 
   const [isShowModal, setIsShowModal] = useState(false);
 
@@ -49,7 +50,9 @@ export const ContactCard = ({ chat }) => {
             />
             <div>
               <p className="text-base font-bold">{name}</p>
-              <p className="text-gray-400">I think top two are:</p>
+              <p className="w-1/3 truncate text-gray-400">
+                {chat.chat[chat.chat.length - 1].you.message}
+              </p>
             </div>
           </div>
 
