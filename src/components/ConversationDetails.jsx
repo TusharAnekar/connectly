@@ -14,11 +14,9 @@ import { MessageCard } from "../components/MessageCard";
 export const ConverstaionDetails = () => {
   const { userId } = useParams();
 
-  const {
-    chats: { originalChats },
-  } = useChatContext();
+  const { readConversation } = useChatContext();
 
-  const user = originalChats.find((user) => user.userId === userId);
+  const user = readConversation.find((user) => user.userId === userId);
   const { name, profilePictureURL, chat } = user;
 
   return (

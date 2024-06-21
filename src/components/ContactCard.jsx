@@ -1,20 +1,36 @@
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useChatContext } from "../contexts/chat-context";
 
 export const ContactCard = ({ chat }) => {
   const { userId, name, unreadCount, profilePictureURL } = chat;
 
   const [isShowModal, setIsShowModal] = useState(false);
 
+  const { setChats } = useChatContext();
+
   const navigate = useNavigate();
 
   function handleContact() {
     navigate(`/contact/${userId}`);
+    setChats({ type: "MARK_AS_READ_CONVERSATION", payload: userId });
   }
 
   function handleMore() {
     setIsShowModal((prev) => !prev);
+  }
+
+  function handleDelete() {
+    setChats({ type: "DELETE_CONVERSATION", payload: userId });
+  }
+
+  function handleMarkAsRead() {
+    setChats({ type: "MARK_AS_READ_CONVERSATION", payload: userId });
+  }
+
+  function handleMarkAsUnread() {
+    setChats({ type: "MARK_AS_UNREAD_CONVERSATION", payload: userId });
   }
 
   return (
@@ -55,8 +71,12 @@ export const ContactCard = ({ chat }) => {
       </div>
       {isShowModal && (
         <div className="absolute right-4 top-12 z-10 flex w-40 flex-col gap-2 rounded-lg border border-black bg-white p-2">
-          <button>Mark as read</button>
-          <button>Delete</button>
+          {unreadCount ? (
+            <button onClick={handleMarkAsRead}>Mark as read</button>
+          ) : (
+            <button onClick={handleMarkAsUnread}>Mark as unread</button>
+          )}
+          <button onClick={handleDelete}>Delete</button>
           <button onClick={handleMore}>Cancel</button>
         </div>
       )}
