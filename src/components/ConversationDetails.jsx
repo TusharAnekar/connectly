@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { useChatContext } from "../contexts/chat-context";
 
@@ -8,21 +8,30 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ControlPointRoundedIcon from "@mui/icons-material/ControlPointRounded";
 import MicNoneRoundedIcon from "@mui/icons-material/MicNoneRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 
 import { MessageCard } from "../components/MessageCard";
 
 export const ConverstaionDetails = () => {
   const { userId } = useParams();
-
+  const navigate = useNavigate();
   const { readConversation } = useChatContext();
 
   const user = readConversation.find((user) => user.userId === userId);
   const { name, profilePictureURL, chat } = user;
 
+  function handleBack() {
+    navigate("/");
+  }
+
   return (
     <div className="lg:m-7 lg:w-full">
       <div className="flex justify-between bg-gray-200 p-4 lg:rounded-lg">
-        <div className="flex gap-2">
+        <div className="flex items-center justify-center gap-2">
+          <ArrowBackIosNewRoundedIcon
+            className="cursor-pointer"
+            onClick={handleBack}
+          />
           <img
             src={profilePictureURL}
             alt={name}
