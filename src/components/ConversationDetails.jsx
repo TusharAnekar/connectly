@@ -25,7 +25,7 @@ export const ConverstaionDetails = () => {
   }
 
   return (
-    <div className="lg:m-7 lg:w-full">
+    <div className="relative lg:w-full lg:p-7">
       <div className="flex justify-between bg-gray-200 p-4 lg:rounded-lg">
         <div className="flex items-center justify-center gap-2">
           <ArrowBackIosNewRoundedIcon
@@ -60,7 +60,7 @@ export const ConverstaionDetails = () => {
         ))}
       </div>
 
-      <div className="border-red bottom-0 flex items-center justify-center gap-2 p-2">
+      <div className="border-red sticky bottom-0 flex w-full items-center justify-center gap-2 bg-white p-2">
         <ControlPointRoundedIcon className="text-gray-300" />
 
         <MicNoneRoundedIcon className="rounded-full border text-gray-300" />
