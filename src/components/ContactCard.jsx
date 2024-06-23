@@ -5,7 +5,10 @@ import { useChatContext } from "../contexts/chat-context";
 
 export const ContactCard = ({ chat }) => {
   const { userId, name, unreadCount, profilePictureURL } = chat;
-  console.log(chat.chat[chat.chat.length - 1].you.message);
+
+  const latestConversation = Object.values(chat.chat[chat.chat.length - 1]);
+  const latestMessage =
+    latestConversation[latestConversation.length - 1].message;
 
   const [isShowModal, setIsShowModal] = useState(false);
 
@@ -50,9 +53,7 @@ export const ContactCard = ({ chat }) => {
             />
             <div>
               <p className="text-base font-bold">{name}</p>
-              <p className="w-32 truncate text-gray-400">
-                {chat.chat[chat.chat.length - 1].you.message}
-              </p>
+              <p className="w-32 truncate text-gray-400">{latestMessage}</p>
             </div>
           </div>
 
