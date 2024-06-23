@@ -75,14 +75,22 @@ export const ContactCard = ({ chat }) => {
         />
       </div>
       {isShowModal && (
-        <div className="absolute right-4 top-12 z-10 flex w-40 flex-col gap-2 rounded-lg border border-black bg-white p-2">
+        <div className="absolute right-4 top-12 z-10 flex w-40 flex-col gap-2 rounded-lg bg-white p-2 shadow-xl">
           {unreadCount ? (
-            <button onClick={handleMarkAsRead}>Mark as read</button>
+            <button onClick={handleMarkAsRead} className="text-left">
+              Mark as read
+            </button>
           ) : (
-            <button onClick={handleMarkAsUnread}>Mark as unread</button>
+            <button onClick={handleMarkAsUnread} className="text-left">
+              Mark as unread
+            </button>
           )}
-          <button onClick={handleDelete}>Delete</button>
-          <button onClick={handleMore}>Cancel</button>
+          <button onClick={handleDelete} className="text-left">
+            Delete
+          </button>
+          <button onClick={handleMore} className="text-left">
+            Cancel
+          </button>
         </div>
       )}
     </div>
