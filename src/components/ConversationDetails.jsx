@@ -25,7 +25,7 @@ export const ConverstaionDetails = () => {
   }
 
   return (
-    <div className="relative lg:w-full lg:p-7">
+    <div className="relative lg:ml-80 lg:w-full lg:p-7">
       <div className="flex justify-between bg-gray-200 p-4 lg:sticky lg:top-0 lg:rounded-lg">
         <div className="flex items-center justify-center gap-2">
           <ArrowBackIosNewRoundedIcon
